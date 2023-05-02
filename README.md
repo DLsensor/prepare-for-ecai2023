@@ -14,10 +14,10 @@ Code for the model in the paper Domain Generalization by Dynamic Label Smoothing
 
 # Function of file
 
-* `prepare-for-ecai2023/model`
-  *model.
-* `prepare-for-ecai2023/model`
-  *model.
+* `prepare-for-ecai2023/model/feature_extractor.py`
+  * model.
+* `prepare-for-ecai2023/model/label_predictor.py`
+  * model.
 
 # Usage
 We've offered three models:  `Model1` , `Model2` and `Model3`

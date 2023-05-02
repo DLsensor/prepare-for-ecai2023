@@ -14,9 +14,11 @@ Code for the model in the paper Domain Generalization by Dynamic Label Smoothing
 
 # Function of file
 
-* `prepare-for-ecai2023/model/feature_extractor.py`
+* `prepare-for-ecai2023/models/feature_extractor.py`
   * model.
-* `prepare-for-ecai2023/model/label_predictor.py`
+* `prepare-for-ecai2023/models/label_predictor.py`
+  * model.
+* `prepare-for-ecai2023/models/label_adjustor.py`
   * model.
 
 # Usage

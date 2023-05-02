@@ -14,10 +14,10 @@ Code for the model in the paper Domain Generalization by Dynamic Label Smoothing
 
 # Function of file
 
-* `Domain-Generalization-by-Dynamic-Label-Smoothing-Strategy-for-Biosignal-Classification/`
-  * train model.
-* `Domain-Generalization-by-Dynamic-Label-Smoothing-Strategy-for-Biosignal-Classification/`
-  * Generate model.
+* `prepare-for-ecai2023/model`
+  *model.
+* `prepare-for-ecai2023/model`
+  *model.
 
 # Usage
 We've offered three models:  `Model1` , `Model2` and `Model3`

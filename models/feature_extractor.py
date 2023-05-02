@@ -439,7 +439,7 @@ class GLInceptionBlock(nn.Module):
         return parameters
 
 
-# ===================== CBAMBlock ==========================
+# ===================== DWCBAMBlock ==========================
 # The squeeze excation block is used as a attention menchanism.
 # input  : (eg. [batch_size, 48, 500])   groups=4, group_width=12, in_planes=48
 # output : [batch_size, 48, 500]         out_planes=48
@@ -622,10 +622,10 @@ class DWCBAM(nn.Module):
         return parameters
 
 
-# =================== EMGNeuralNetwork ======================
-#
-#
-# =================== EMGNeuralNetwork ======================
+# =================== FeatureExtractor ======================
+# The FeatureExtractor class is used as a backbone as to  
+# extract the features of multichannel physiological signals
+# =================== FeatureExtractor ======================
 class FeatureExtrctor(nn.Module):
 
     def __init__(
@@ -658,7 +658,7 @@ class FeatureExtrctor(nn.Module):
             self.input_channel = int(self.input_channel * block1.expansion * 3)
             layers.append(block2(in_planes=self.input_channel, out_planes=planes, kernel_size=3, stride=1, groups=self.groups))
             self.input_channel = planes * block2.expansion
-            # layers.append(block3(self.input_channel, reduction=4))
+            layers.append(block3(self.input_channel, reduction=4))
 
         return nn.Sequential(*layers)
 
@@ -674,12 +674,3 @@ class FeatureExtrctor(nn.Module):
 
     def forward(self, x: torch.Tensor):
         return self._forward_imp(x)
-#
-#
-# if __name__ == '__main__':
-#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-#     model = FeatureExtrctor(layers=[33, 44])
-#     test = torch.randn(size=(32, 10, 20))
-#     extracted_feature1, extracted_feature2 = model(test)
-#     print(extracted_feature1.shape)
-#     print(extracted_feature2.shape)

@@ -21,6 +21,6 @@ Code for the model in the paper Domain Generalization by Dynamic Label Smoothing
 * `prepare-for-ecai2023/models/label_adjustor.py`
   * label adjustor: The final component of our framework is the Label Adjustor, which utilizes the features extracted by the Feature Extractor to adjust the true labels. The purpose of this component is to enable the Feature Extractor to learn both inter-and inter- samples differences, thus improving the model's generalization ability. In cases where the input data contains noise, the Label Adjustor can help maintain or even enhance the model's performance by refining the true label based on the features extracted from the input data.
 
-# Usage
-We've offered three models:  `Model1` , `Model2` and `Model3`
-You need to use a tensor with shape: **[Batch_size, channel, length]** for all the three models.
+//# Usage
+//We've offered three models:  `Model1` , `Model2` and `Model3`
+//You need to use a tensor with shape: **[Batch_size, channel, length]** for all the three models.

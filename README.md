@@ -20,3 +20,20 @@ Code for the model in the paper Domain Generalization by Dynamic Label Smoothing
   * label predictor: The second component, the Label Predictor, is analogous to the classification layer found in traditional feedforward neural networks. It takes the features extracted by the Feature Extractor and performs classification tasks. The Label Predictor utilizes various activation functions and optimization techniques to map the extracted features to their corresponding class labels.
 * `prepare-for-ecai2023/models/label_adjustor.py`
   * label adjustor: The final component of our framework is the Label Adjustor, which utilizes the features extracted by the Feature Extractor to adjust the true labels. The purpose of this component is to enable the Feature Extractor to learn both inter-and inter- samples differences, thus improving the model's generalization ability. In cases where the input data contains noise, the Label Adjustor can help maintain or even enhance the model's performance by refining the true label based on the features extracted from the input data.
+
+
+# Usage
+
+- Data preparation
+
+  Extract DE features and make data package.
+
+- Configuration
+
+  Write the config file in the format of the example.
+  
+    - We provide a sample config file in `/config/SS3.config`
+
+- Network training and testing
+
+  Run `python train.py` with -c and -g parameters.
